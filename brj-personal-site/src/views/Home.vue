@@ -1,4 +1,8 @@
 <template>
+<!-- 
+    This specific view will be my landing page, and the skeleton for other views. 
+    
+ -->
     <div id="container">
         <Header id="header" />
         <Navbar id="navbar" />        
