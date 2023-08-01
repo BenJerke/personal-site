@@ -1,9 +1,5 @@
 # brj-personal-site
 
-This is a Vue.js-based web application that I'm planning to use as a personal portfolio/blog. 
-
-
-
 ## Project setup
 ```
 npm install
