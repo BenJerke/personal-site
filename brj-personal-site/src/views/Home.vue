@@ -1,11 +1,11 @@
 <template>
-    <div id="container">
-        <Header id="header" />
-        <Navbar id="navbar" />        
-        <LeftsidePanel id="leftPanel" /> 
-        <Main id="main" />       
-        <RightsidePanel id="rightPanel" />
-        <Footer id="footer" />
+    <div id="app" class="container">
+        <Header id="header" class="gridling"/>
+        <Navbar id="navbar" class="gridling" />        
+        <Main id="main" class="gridling" />
+        <LeftsidePanel id="leftPanel" class="gridling" />        
+        <RightsidePanel id="rightPanel" class="gridling" />
+        <Footer id="footer" class="gridling" />
     </div>
 </template>
 
@@ -18,6 +18,7 @@ import RightsidePanel from '@/components/RightsidePanel';
 import Footer from '@/components/Footer';
 
 export default {
+  name: "home-view",
   components: {
       Header, 
       Navbar,
@@ -26,40 +27,44 @@ export default {
       RightsidePanel, 
       Footer 
   },
-    name: "home-view",
+    
+
 }
 
 </script>
 
 <style>
-    div#container{
+    .container > .gridling{
+        border-radius: 1em;
+        border: 1px solid black;
+    }
+    .container{
         margin: 5vh;
         display: grid;
-        height: 100%; 
-        width: 100%;
         grid-template-columns: .5fr 2fr .5fr;
-        grid-template-rows: 10vh 5vh 80vh 5vh;
+        grid-template-rows: 15vh 5vh 80vh 10vh;
         grid-template-areas: "header header header"
                              "navbar navbar navbar"
                              "leftPanel main rightPanel"
-                             "footer footer footer";                                                          
-    }
-    div#header{
+                             "footer footer footer";
+        gap: 3px;
+                             }
+    #header{
         grid-area: header;        
     }
-    div#navbar{
+    #navbar{
         grid-area: navbar;
     }
-    div#main{
+    #main{
         grid-area: main;
     }
-    div#leftPanel{
+    #leftPanel{
         grid-area: leftPanel;
     }
-    div#rightPanel{
+    #rightPanel{
         grid-area: rightPanel;
     }
-    div#footer{
+    #footer{
         grid-area: footer
     }
 

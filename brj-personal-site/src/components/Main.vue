@@ -1,31 +1,55 @@
 <template>
       <main> 
-          <h1>Main Content Here</h1>
-          <section>
-
+          <section class="post-window">
               <!-- 
-                  This is where the stuff goes, once I figure out what it is.
-                  Okay - let's say this is where I'd show a blog post. 
-                  I'd need it to: 
-                  - get a markdown file for the given post. 
-                  - render markdown files somehow. 
-                    - Figure out a way to put workable links inside markdown files (should be easy enough, right? it's all just posts, innit?)  
-                  - scroll independently from the rest of the content on screen. 
-               -->
+                  loop posts here, per what we get back from our server, which'll get called by our parent component.
+               which depends on which view we're in.
+                -->
+              <Post />
           </section>
       </main>
 </template>
 
 <script>
+import Post from '@/components/Post';
+
 export default {
-    name: "main-display", 
+    name: "main-display",
+    props: ['posts'], 
+    components:{
+        Post
+    },
+    data(){
+        return{
+            testPost: "",
+        }
+    }
 }
 </script>
 
 <style>
+    .post-window::-webkit-scrollbar{
+        display: none;
+    }
+    .post-window::-webkit-scrollbar-track-piece{
+        display: none;
+    }
+    .post-window::-webkit-scrollbar-thumb{
+        border-radius: 5rem;
+    }
     main{
         display: flex;
-        justify-content: center;
-        align-items: center;
+        /* flex-direction: column; */
+        justify-content: flex-start;
+        overflow-y: scroll;
+        border: none;
+        padding: 10px;     
+        /* align-items: center; */        
+    }
+    main::-webkit-scrollbar{
+        display: none;
+    }
+    main > section > div > zero-md > div.markdown-body > p {
+        text-align: left;
     }
 </style>

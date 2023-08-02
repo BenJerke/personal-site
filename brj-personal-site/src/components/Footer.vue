@@ -13,9 +13,9 @@ export default {
 </script>
 
 <style>
-    section{
+    footer{
         display: flex;
-        justify-content: left;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
     }
 </style>
