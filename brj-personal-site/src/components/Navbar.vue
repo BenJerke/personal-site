@@ -1,9 +1,9 @@
 <template>
   <div>
       <nav>
-          <p>link placeholder 1</p>
-          <p>link placeholder 2</p>
-          <p>link placeholder 3</p>
+          <a href="https://www.linkedin.com/in/benjerke614/">LinkedIn</a>
+          <a href="https://github.com/BenJerke">Github</a>
+          <a href="">Contact</a>
       </nav>
   </div>
 </template>
@@ -15,9 +15,10 @@ export default {
 </script>
 
 <style>
-    nav{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
+nav{
+    display: flex;
+    flex-basis: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
 </style>

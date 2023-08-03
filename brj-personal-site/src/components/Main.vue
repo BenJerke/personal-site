@@ -5,7 +5,7 @@
                   loop posts here, per what we get back from our server, which'll get called by our parent component.
                which depends on which view we're in.
                 -->
-              <Post />
+              <Post postSrc="/test/test.md" />
           </section>
       </main>
 </template>
@@ -28,6 +28,7 @@ export default {
 </script>
 
 <style>
+
     .post-window::-webkit-scrollbar{
         display: none;
     }

@@ -1,7 +1,7 @@
 <template>
   <div>
       <header>
-          <h1>HEADER</h1>
+          <h1>HELLO. PLEASE HIRE ME.</h1>
       </header>
   </div>
 </template>

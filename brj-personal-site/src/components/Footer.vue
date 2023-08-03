@@ -13,9 +13,12 @@ export default {
 </script>
 
 <style>
-    footer{
+    footer {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: center;                
+    }
+    footer h1 {
+        line-height: .1em;
     }
 </style>

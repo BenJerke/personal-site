@@ -1,6 +1,6 @@
 <template>
   <div id="post"> 
-       <zero-md src="/test/test.md">
+       <zero-md id="mdr" :src="postSrc">
       </zero-md>  
  
   </div>
@@ -10,7 +10,7 @@
 
 export default {
     name: 'blog-post',
-    props:['postData'],
+    props:['postSrc'],
     // data(){
     //     return {
     //         postContent: marked.parse(this.postData),
@@ -25,6 +25,7 @@ export default {
     display: flex;
     justify-content: flex-start;    
 }
+
 
 
 </style>
