@@ -1,10 +1,10 @@
 <template>
-    <div id="app" class="container">
+    <div id="app" class="thing-container">
         <Header id="header" class="gridling"/>
         <Navbar id="navbar" class="gridling" />        
         <Main id="main" class="gridling" />
-        <LeftsidePanel id="leftPanel" class="gridling" />        
-        <RightsidePanel id="rightPanel" class="gridling" />
+        <LeftsidePanel id="leftPanel" class="gridling sidepanel" />        
+        <RightsidePanel id="rightPanel" class="gridling sidepanel" />
         <Footer id="footer" class="gridling" />
     </div>
 </template>
@@ -34,12 +34,12 @@ export default {
 </script>
 
 <style>
-    .container > .gridling{
+    .thing-container > .gridling{
         /* border-radius: 1em; */
         /* border: 1px solid black; */
-        padding: 5px;
+        padding-bottom: 5px;
     }
-    .container{
+    .thing-container{
         margin: 5vh;
         display: grid;
         grid-template-columns: .5fr 3fr .5fr;
@@ -51,15 +51,18 @@ export default {
         gap: 3px;
                              }
     #header{
-        border-top: 1px solid black ;
+        border-bottom: 1px solid black ;
         /* border-bottom: 1px solid black; */
         grid-area: header;      
     }
+
     #navbar{
     grid-area: navbar;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     }
               
     #main{
@@ -79,8 +82,9 @@ export default {
     #footer{
         grid-area: footer
     }
+
     @media only screen and (max-width: 768px){
-        .container{            
+        .thing-container{            
             grid-template-columns: .25fr 1fr;
             grid-template-rows: 5vh 5vh 40vh 40vh 5vh;
             grid-template-areas: "header header"
@@ -92,10 +96,18 @@ export default {
         body{
             font-size: .75rem;
         }
-        
+        #header{
+            grid-area: header;
+        }
+        #navbar{
+            grid-area: navbar;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
     }
     @media only screen and (max-width: 512px){
-        .container{
+        .thing-container{
             grid-template-columns: 1fr;
             grid-template-rows: 5vh 5vh 85vh 5vh;
             grid-template-areas: "header"
@@ -114,6 +126,9 @@ export default {
         }
         #footer{
             display: none;
+        }
+        #header{
+            border: none;
         }
         
     }

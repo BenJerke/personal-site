@@ -1,8 +1,6 @@
 <template>
   <div id="post"> 
-       <zero-md id="mdr" :src="postSrc">
-      </zero-md>  
- 
+       <zero-md id="mdr" :src="postSrc"></zero-md>          
   </div>
 </template>
 

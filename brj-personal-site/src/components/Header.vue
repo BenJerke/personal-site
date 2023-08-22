@@ -1,7 +1,7 @@
 <template>
   <div>
       <header>
-          <h1>HELLO. PLEASE HIRE ME.</h1>
+          <h1>Ben Jerke</h1>                    
       </header>
   </div>
 </template>
@@ -18,4 +18,6 @@ export default {
         justify-content: center;
         align-items: center;
     }
+    
+
 </style>

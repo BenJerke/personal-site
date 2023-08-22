@@ -1,11 +1,17 @@
 <template>
       <main> 
           <section class="post-window">
-              <!-- 
-                  loop posts here, per what we get back from our server, which'll get called by our parent component.
-               which depends on which view we're in.
+
+                <!-- 
+
+                v-for posts based on post array, to be fetched via API call.
+                bind each postSrc to the link on each post in the post array. 
+                for now, let's use Google Drive.  
+                also... container required here. let's not be exposing my credentials.
+                
                 -->
               <Post postSrc="/test/test.md" />
+              <span>Previous Posts (not relevant yet)</span>
           </section>
       </main>
 </template>
@@ -41,7 +47,7 @@ export default {
     main{
         display: flex;
         /* flex-direction: column; */
-        justify-content: flex-start;
+        justify-content: center;
         overflow-y: scroll;
         border: none;
         padding: 10px;     
