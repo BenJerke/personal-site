@@ -10,7 +10,8 @@
                 also... container required here. let's not be exposing my credentials.
                 
                 -->
-              <Post postSrc="/test/test.md" />
+              <Post postSrc="deploying.md" />
+              <br>
               <span>Previous Posts (not relevant yet)</span>
           </section>
       </main>
@@ -58,5 +59,10 @@ export default {
     }
     main > section > div > zero-md > div.markdown-body > p {
         text-align: left;
+    }
+    .post-window{
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
     }
 </style>

@@ -5,7 +5,7 @@
         <Main id="main" class="gridling" />
         <LeftsidePanel id="leftPanel" class="gridling sidepanel" />        
         <RightsidePanel id="rightPanel" class="gridling sidepanel" />
-        <Footer id="footer" class="gridling" />
+
     </div>
 </template>
 
@@ -15,7 +15,7 @@ import Navbar from '@/components/Navbar';
 import Main from '@/components/Main'; 
 import LeftsidePanel from '@/components/LeftsidePanel' ;
 import RightsidePanel from '@/components/RightsidePanel';
-import Footer from '@/components/Footer';
+
 
 export default {
   name: "home-view",
@@ -25,7 +25,7 @@ export default {
       Main,
       LeftsidePanel, 
       RightsidePanel, 
-      Footer 
+      
   },
     
 
@@ -38,16 +38,17 @@ export default {
         /* border-radius: 1em; */
         /* border: 1px solid black; */
         padding-bottom: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
     }
     .thing-container{
         margin: 5vh;
         display: grid;
         grid-template-columns: .5fr 3fr .5fr;
-        grid-template-rows: 15vh 5vh 80vh 10vh;
+        grid-template-rows: 15vh 5vh 90vh;
         grid-template-areas: "header header header"
                              "navbar navbar navbar"
-                             "leftPanel main rightPanel"
-                             "footer footer footer";
+                             "leftPanel main rightPanel";
         gap: 3px;
                              }
     #header{
@@ -73,25 +74,23 @@ export default {
         border-right: 1px solid black;
     }
     #leftPanel{
-        grid-area: leftPanel;
+        grid-area: leftPanel;        
 
     }
     #rightPanel{
         grid-area: rightPanel;
     }
-    #footer{
-        grid-area: footer
-    }
+
 
     @media only screen and (max-width: 768px){
         .thing-container{            
             grid-template-columns: .25fr 1fr;
-            grid-template-rows: 5vh 5vh 40vh 40vh 5vh;
+            grid-template-rows: 5vh 5vh 50vh 50vh;
             grid-template-areas: "header header"
                                  "navbar navbar"
                                  "rightPanel main"
-                                 "leftPanel main"
-                                 "footer footer";
+                                 "leftPanel main";
+                                 
         }
         body{
             font-size: .75rem;
@@ -122,9 +121,6 @@ export default {
             display: none;            
         }
         #rightPanel{
-            display: none;
-        }
-        #footer{
             display: none;
         }
         #header{

@@ -1,7 +1,9 @@
 <template>
   <section class="right">
-      <h1>Right Side Panel</h1>
-      <h4> list of blog posts goes here </h4>
+      <h1>Some of My Friends</h1>
+      <a href="https://github.com/brandonmcmaster">Brandon McMaster</a>
+      <a href="https://github.com/ATaylorN">Amanda Taylor</a>
+      <a href="https://www.linkedin.com/in/thadosburndeveloper/">Thad Osburn</a>
   </section>
 </template>
 

@@ -3,7 +3,7 @@
       <nav>
           <a href="https://www.linkedin.com/in/benjerke614/">LinkedIn</a>
           <a href="https://github.com/BenJerke">Github</a>
-          <a href="">Contact</a>
+          <a href="BRJ_Resume.pdf" download="">Download My Resume</a>
       </nav>
   </div>
 </template>
