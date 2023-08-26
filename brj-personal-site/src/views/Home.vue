@@ -85,7 +85,7 @@ export default {
     @media only screen and (max-width: 768px){
         .thing-container{            
             grid-template-columns: .25fr 1fr;
-            grid-template-rows: 5vh 5vh 50vh 50vh;
+            grid-template-rows: 10vh 5vh 50vh 50vh;
             grid-template-areas: "header header"
                                  "navbar navbar"
                                  "rightPanel main"
@@ -108,11 +108,12 @@ export default {
     @media only screen and (max-width: 512px){
         .thing-container{
             grid-template-columns: 1fr;
-            grid-template-rows: 5vh 5vh 85vh 5vh;
+            grid-template-rows: 10vh 5vh 85vh 5vh;
             grid-template-areas: "header"
+                                "navbar"
                                  "main"
-                                 "main"
-                                 "navbar"
+                                 "main";
+                                 
         }
         body{
             font-size: .5rem;
