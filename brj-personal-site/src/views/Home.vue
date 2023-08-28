@@ -59,7 +59,6 @@ export default {
         justify-content: space-between;
         align-items: flex-end;
         flex-wrap: wrap;      
-        padding-bottom: 3rem;
     }
         
     #navbar{
@@ -103,6 +102,9 @@ export default {
         body{
             font-size: .75rem;
         }
+        #header {
+        padding-bottom: 3rem;
+        }
         /* #header h4{
             margin-bottom: 0;
             margin-top: 1.8rem;
@@ -111,12 +113,15 @@ export default {
             margin-top: 5px;
             margin-bottom: 5px;
         }
+        #main{
+            padding-bottom: 30rem;
+        }
 
     }
     @media only screen and (max-width: 512px){
         .thing-container{
             grid-template-columns: 1fr;
-            grid-template-rows: 10vh 5vh 85vh 5vh;
+            grid-template-rows: 11vh 2vh 85vh 5vh;
             grid-template-areas: "header"
                                 "navbar"
                                  "main"
