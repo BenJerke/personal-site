@@ -34,7 +34,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
     .post-window::-webkit-scrollbar{
         display: none;

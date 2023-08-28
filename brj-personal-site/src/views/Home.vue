@@ -55,6 +55,7 @@ export default {
         border-bottom: 1px solid black ;
         /* border-bottom: 1px solid black; */
         grid-area: header;      
+        
     }
 
     #navbar{
@@ -84,22 +85,31 @@ export default {
 
     @media only screen and (max-width: 768px){
         .thing-container{            
-            grid-template-columns: .25fr 1fr;
-            grid-template-rows: 10vh 5vh 50vh 50vh;
+            grid-template-columns: 1fr .25fr;
+            grid-template-rows: 16vh 5vh 50vh 50vh;
             grid-template-areas: "header header"
                                  "navbar navbar"
-                                 "rightPanel main"
-                                 "leftPanel main";
+                                 "main rightPanel"
+                                 "main leftPanel";
                                  
+        }
+        .thing-container #header.gridling{
+            margin-bottom: 1rem;
         }
         body{
             font-size: .75rem;
         }
         #header{
-            grid-area: header;
+            display: flex; 
+            justify-content: space-between;
+            align-items: flex-start;            
+        }
+        #header h4{
+            text-align: start;
+            margin-bottom: 0;
+            margin-top: 1.8rem;
         }
         #navbar{
-            grid-area: navbar;
             margin-top: 5px;
             margin-bottom: 5px;
         }
