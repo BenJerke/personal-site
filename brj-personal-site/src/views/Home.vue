@@ -54,10 +54,14 @@ export default {
     #header{
         border-bottom: 1px solid black ;
         /* border-bottom: 1px solid black; */
-        grid-area: header;      
-        
+        grid-area: header;
+        display: flex; 
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-wrap: wrap;      
+        padding-bottom: 3rem;
     }
-
+        
     #navbar{
     grid-area: navbar;
     display: flex;
@@ -99,16 +103,10 @@ export default {
         body{
             font-size: .75rem;
         }
-        #header{
-            display: flex; 
-            justify-content: space-between;
-            align-items: flex-start;            
-        }
-        #header h4{
-            text-align: start;
+        /* #header h4{
             margin-bottom: 0;
             margin-top: 1.8rem;
-        }
+        } */
         #navbar{
             margin-top: 5px;
             margin-bottom: 5px;
@@ -135,8 +133,11 @@ export default {
             display: none;
         }
         #header{
-            border: none;
+            flex-wrap: nowrap;
+            padding-bottom: .05rem;
+
         }
+
         
     }
 

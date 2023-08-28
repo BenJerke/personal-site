@@ -1,7 +1,7 @@
 <template>
       <header>          
           <h1>Ben Jerke</h1>           
-            <span class="break"></span>
+        
           <h4>Software developer based in Columbus, Ohio </h4>
       </header>
 </template>
