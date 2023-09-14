@@ -10,6 +10,8 @@
                 also... container required here. let's not be exposing my credentials.
                 
                 -->
+            <Post postSrc="time_mgmt.md" />
+                <br>        
               <Post postSrc="deploying.md" />
               <br>
               <span>Previous Posts (not relevant yet)</span>
