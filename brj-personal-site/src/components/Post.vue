@@ -1,6 +1,6 @@
 <template>
-  <div id="post"> 
-       <zero-md id="mdr" :src="postSrc"></zero-md>          
+  <div id="post" v-if="postSrc"> 
+       <zero-md id="mdr" :src="postSrc" ></zero-md>          
   </div>
 </template>
 
@@ -11,10 +11,10 @@ export default {
     props:['postSrc'],
     // data(){
     //     return {
-    //         postContent: marked.parse(this.postData),
+    //         postString: this.postSrc,
     //     }        
     // }
-    // My server needs to throw a string of markdown at me. 
+
 }
 </script>
 

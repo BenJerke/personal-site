@@ -14,7 +14,6 @@ export default {
 </script>
 
 <style>
-
     section.right{
         display: flex;
         flex-direction: column;

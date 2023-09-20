@@ -1,38 +1,59 @@
 <template>
       <main> 
-          <section class="post-window">
-
-                <!-- 
-
-                v-for posts based on post array, to be fetched via API call.
-                bind each postSrc to the link on each post in the post array. 
-                for now, let's use Google Drive.  
-                also... container required here. let's not be exposing my credentials.
-                
-                -->
-            <Post postSrc="time_mgmt.md" />
-                <br>        
-              <Post postSrc="deploying.md" />
-              <br>
+          <section class="post-window" v-if="loaded">
+                <Post v-for="postString, index in posts" :key="index" :postSrc="postString"/>                
               <span>Previous Posts (not relevant yet)</span>
           </section>
       </main>
 </template>
 
 <script>
-import Post from '@/components/Post';
+import Post from '@/components/Post.vue';
+import fb from '@/services/FirebaseAppConfig.js'; 
+import {getStorage, ref, list, getDownloadURL} from 'firebase/storage';
+
+const storage = getStorage(fb.app); 
 
 export default {
     name: "main-display",
-    props: ['posts'], 
     components:{
         Post
     },
     data(){
         return{
-            testPost: "",
+            testPost: "", 
+            posts: [],
+            loaded: false,     
         }
+    },
+    created() {
+        let postsRef = ref(storage, 'posts');         
+        list(postsRef)
+            .then(data => {                
+                data.items.forEach(item => {          
+                            
+                    // getDownloadURL(item)
+                    //     .then(link => {
+                    //         this.posts.push(link);
+                    //     })
+                    //     .catch(error =>{
+                    //         console.log(error);
+                    //     });
+                    //console.log(item.toString());
+                    getDownloadURL(item)
+                        .then(url =>{
+                            this.posts.push(url);
+                        })
+                    
+                });
+            })
+            .catch(error => {
+                console.log(error);
+            })
+            .finally(this.loaded = true)
     }
+   
+    
 }
 </script>
 
