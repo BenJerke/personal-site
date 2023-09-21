@@ -1,9 +1,7 @@
 <template>
   <div id="post"> 
-       <zero-md id="mdr" :src="postSrc" ></zero-md>
+       <zero-md id="mdr" v-if="postSrc" :src="postSrc" ></zero-md>
   </div>
-  
-
 </template>
 
 <script>
@@ -33,8 +31,6 @@ export default {
   padding: 10px;
   padding-bottom: 20px;
   padding-top: 20px;
-  border-bottom: 2px solid black;
-  border-radius: 2px;
 }
 .spacer{
   padding: 10px;
