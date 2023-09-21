@@ -1,5 +1,5 @@
 <template>
-  <div id="post" v-if="postSrc"> 
+  <div id="post"> 
        <zero-md id="mdr" :src="postSrc" ></zero-md>
   </div>
   

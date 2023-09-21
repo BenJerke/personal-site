@@ -1,8 +1,9 @@
 <template>
-      <main> 
-          <section class="post-window" v-if="loaded">
+      <main>
+            <h2 v-if="!loaded"> Loading... </h2>
+            <section class="post-window" v-if="loaded">
                 <Post v-for="postString, index in posts" :key="index" :postSrc="postString"/>
-          </section>
+            </section>
       </main>
 </template>
 
@@ -32,14 +33,12 @@ export default {
             let postList = [];
             await list(postsRef)
                     .then(data => { 
-                        console.log('setting post list to list() output')   
                         postList = data.items;
                                    
                     })
                     .catch(error => {
                         console.error(error); 
                     });
-                console.log('returning post list array')
             return postList;  
         },
 
@@ -51,7 +50,6 @@ export default {
             return postPlusTimestamp;  
         }, 
         compareTimestamps(a, b){
-            console.log('sorting: ' + a.timeCreated + ' vs ' + b.timeCreated)
             if(a.timeCreated < b.timeCreated){
                 return -1; 
             }
@@ -63,7 +61,6 @@ export default {
         
     },    
     async created(){   
-            console.log('running it.')
             this.getPostsList()
                 .then(async posts => {
                     let i = 0;
@@ -79,17 +76,6 @@ export default {
                     })
                     this.loaded = true; 
                 })
- 
-
-
-
-        
-        // postsPlusTimestamps.forEach( async element => {
-        //     let url = await this.getDownloadURLForPost(element.storageReference); 
-        //     console.log(url);
-        //     this.posts.unshift(url);
-        // });
-        // console.log(this.posts);
         
     }    
 }
